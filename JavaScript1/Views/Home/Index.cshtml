@@ -1,0 +1,156 @@
+﻿
+
+
+<input type="button" onclick="Topla(10,20)" />
+<p id="pelement">Test</p>
+<input id="btnpress" onclick="Say();" type="button" value="Key Press" />
+
+<textarea id="textarea">Buranın içerisine yazılan her yazının, toplam karakter sayısından kalanını yazınız</textarea>
+<br />
+<b>Kalan karakter sayısı : <strong id="skalan">50</strong></b>
+<script>
+
+
+    var a = 10;
+    var b = "Ben değişkenim"
+    var c = 10.5;
+
+
+    var toplam = a + c;
+    var eksi = c - a;
+    var bolum = c / a;
+    var carpim = c * a;
+
+
+    Topla(10, 20);
+
+    function Topla(a, c) {
+
+
+        //alert(a + c);
+    }
+
+
+
+    // Tarih Zaman İşlemleri
+    var tarih = new Date();
+    // alert("Get Date : "+tarih.getDate())
+    // alert("Get Mounth : " + tarih.getMonth())
+    // alert("Get Day : " + tarih.getDay())
+    // alert("Get Full Year : " + tarih.getFullYear())
+    // alert("Get Full Year : " + tarih.getHours());
+    // alert("Get Full Year : " + tarih.getTime());
+
+
+    // Koşul işlemleri
+    if (tarih.getHours() > 17) {
+
+
+        //alert("Akşam");
+
+    }
+    else {
+
+        //alert("Sabah");
+
+    }
+
+    // Döngü işlemleri .
+
+    var meyveler = ["Greyfurt", "Portakal", "Elma", "Ejder Meyvesi", "Nektari", "Karpuz", "Kavun", "Ayva", "Erik", "Çilek", "Muz"];
+
+
+
+    var i;
+    var uzunluk = meyveler.length;
+    for (i = 0; i < uzunluk; i++) {
+
+        //alert(meyveler[i]);
+    }
+
+    //Sonsuz döngü
+    // for (; ; i++) {
+
+    //     //alert(meyveler[i]);
+    //     console.log(i.toString());
+
+    // }
+
+    // Kod yazarken browser developer adımında görmek için bu şekilde uyarılar yazabilirsiniz.
+    console.log("Bu bir logdur");
+    console.error("bu bir errordur");
+    console.warn("bu bir warn");
+
+
+
+    //Metinsel işlemler
+
+    var metin = "Ben bir yazıyım";
+
+    console.log(metin.substr(2, 8));  //
+    console.log(metin.replace("bir", "iki"));
+    console.log(metin.toLocaleUpperCase());
+
+
+    //Yönlendirme İşlemleri
+
+    function Yonlendir() {
+
+        window.location.href = "http://www.google.com";
+
+    }
+
+    //Random sayi üretme
+
+    console.log(Math.random());
+    //Matematiksel işlemler için Math sınıfı kullanılabilir. Örnek : üstlü sayılar, yuvarlamalar köklü sayılar vb.
+
+
+    //GetElementById
+
+    // var element = document.getElementById("pelement");
+    // element.innerHTML = "GetElementBy Id ile atanan değer";
+
+
+
+    // var btnelement = document.getElementById("btnpress");
+    // btnelement.onmouseenter = function () {
+    //     debugger;
+
+    //     var textareaelement = document.getElementById("textarea");
+    //     alert(textareaelement.innerHTML.length);
+
+    // };
+
+
+    function Say() {
+
+
+        var textareaelement = document.getElementById("textarea");
+        alert(textareaelement.value.length);
+
+    }
+
+    var max = 160;
+    var textareaelement = document.getElementById("textarea");
+    textareaelement.onkeypress = function () {
+
+        var sonuc = max - textareaelement.value.length;
+        var strong = document.getElementById("skalan");
+        strong.innerHTML = sonuc;
+    }
+
+    // Ödev : kalan rakam 0 olunca, yazmaya izin verme!
+    //backspace'e basınca, rakamlar artsın!!!!
+
+
+
+
+
+</script>
+
+<input type="button" onclick="Yonlendir();" value="Yönlendir" />
+
+
+
+
